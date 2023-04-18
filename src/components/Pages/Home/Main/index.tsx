@@ -3,7 +3,14 @@ import Carousel from "@components/shared/Carousel";
 import Image from "@components/shared/Image";
 import Typography from "@components/shared/Typography";
 
-const Main = () => {
+export interface CarrousselImagesProps{
+  images: {
+    src: string;
+    alt: string;
+  }[];
+}
+
+export default function Main({images}: CarrousselImagesProps){
   const { width } = useWindowDimensions();
 
   let classesTypography = "";
@@ -18,36 +25,7 @@ const Main = () => {
     classesTypography = " flex justify-end pr-10 !text-6xl mt-[8%] gap-2 ";
   }
 
-  const images = [
-    {
-      src: "/images/1.jpg",
-      alt: "1",
-    },
-    {
-      src: "/images/2.jpg",
-      alt: "2",
-    },
-    {
-      src: "/images/3.jpg",
-      alt: "3",
-    },
-    {
-      src: "/images/4.jpg",
-      alt: "4",
-    },
-    {
-      src: "/images/5.jpg",
-      alt: "5",
-    },
-    {
-      src: "/images/6.jpg",
-      alt: "6",
-    },
-    {
-      src: "/images/7.jpg",
-      alt: "7",
-    },
-  ];
+  
 
   return (
     <div className="flex flex-col text-white">
@@ -126,7 +104,7 @@ const Main = () => {
           text="Veja alguns de nossos trabalhos"
           className="!text-2xl pr-2 text-center pt-2"
         />
-        <Carousel
+          <Carousel
           overflowHidden={false}
           columns={{ xs: 1, sm: 1.5, md: 2.2, lg: 3.05 }}
           classNameContainer="z-0 relative"
@@ -148,6 +126,7 @@ const Main = () => {
             );
           })}
         />
+        
       </div>
       <div className="flex flex-col bg-black p-3">
         <Typography text="Parceiros" className="!text-2xl text-center" />
@@ -158,5 +137,3 @@ const Main = () => {
     </div>
   );
 };
-
-export default Main;
