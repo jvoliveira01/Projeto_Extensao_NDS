@@ -1,19 +1,19 @@
-import React from 'react';
+import React from "react";
 
 interface Props {
   text: string | number;
-  type?: 'h1' | 'h2' | 'h3' | 'p' | 'caption';
+  type?: "h1" | "h2" | "h3" | "p" | "caption";
   className?: string;
 }
 
-const Typography = ({ text, type, className = '' }: Props) => {
-  const sharedClassName = 'leading-tight';
+const Typography = ({ text, type, className = "" }: Props) => {
+  const sharedClassName = "leading-tight";
 
   const Paragraph = (
     <p className={`text-base ${sharedClassName} ${className}`}>{text}</p>
   );
   const H1 = (
-    <h1 className={`font-semibold text-2xl ${sharedClassName}  ${className}`}>
+    <h1 className={`font-semibold text-3xl ${sharedClassName}  ${className}`}>
       {text}
     </h1>
   );
@@ -32,19 +32,19 @@ const Typography = ({ text, type, className = '' }: Props) => {
   );
 
   switch (type) {
-    case 'h1': {
+    case "h1": {
       return H1;
     }
-    case 'h2': {
+    case "h2": {
       return H2;
     }
-    case 'h3': {
+    case "h3": {
       return H3;
     }
-    case 'p': {
+    case "p": {
       return Paragraph;
     }
-    case 'caption': {
+    case "caption": {
       return Caption;
     }
     default: {

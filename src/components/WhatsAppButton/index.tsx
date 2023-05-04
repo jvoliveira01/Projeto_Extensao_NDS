@@ -22,7 +22,7 @@ const WhatsAppButton = () => {
 
   return (
     <div
-      className={`flex fixed z-50 bottom-[3%] mx-auto w-full max-w-6xl px-5 justify-end`}
+      className={`flex fixed z-50 bottom-[3%] mx-auto w-full max-w-7xl px-5 justify-end`}
     >
       <a
         href="https://api.whatsapp.com/send?phone=5537998372091"
@@ -31,12 +31,12 @@ const WhatsAppButton = () => {
       >
         {openWhatsAppText && !isTouchDevice ? (
           <Typography
-            text="Nos chame no WhatsApp"
+            text="Entrar em contato"
             className="bg-[#000000] text-white rounded-lg p-2"
           />
         ) : null}
         <Image
-          src="/whatsapp.svg"
+          src="/whatsapp.png"
           alt="WhatsApp"
           layout="fixed"
           width={45}

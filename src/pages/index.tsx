@@ -1,11 +1,17 @@
-import { GetServerSideProps } from 'next';
+import { GetServerSideProps } from "next";
 import Head from "next/head";
 import { NextPage } from "next";
 import SiteFrontLayout from "@components/layouts/SiteFront";
 import Home from "@components/components/Pages/Home/home";
-import { CarrousselImagesProps } from '@components/components/Pages/Home/Main';
 
-const Page: NextPage = ({images}: CarrousselImagesProps) => {
+interface CarrousselImagesProps {
+  images: {
+    src: string;
+    alt: string;
+  }[];
+}
+
+const Page: NextPage<CarrousselImagesProps> = ({ images }) => {
   return (
     <SiteFrontLayout>
       <Head>
@@ -25,9 +31,9 @@ const Page: NextPage = ({images}: CarrousselImagesProps) => {
   );
 };
 
-export default Page;
-
-export const getServerSideProps:GetServerSideProps = async (context) => {
+export const getServerSideProps: GetServerSideProps<
+  CarrousselImagesProps
+> = async () => {
   const images = [
     {
       src: "/images/1.jpg",
@@ -61,7 +67,9 @@ export const getServerSideProps:GetServerSideProps = async (context) => {
 
   return {
     props: {
-      images
+      images,
     },
   };
 };
+
+export default Page;

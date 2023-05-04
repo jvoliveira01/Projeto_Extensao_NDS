@@ -67,19 +67,18 @@ const HomePageBanner = () => {
   ];
   return (
     <Carousel
-      classNameContainer="-top-5 relative w-full"
+      classNameContainer="-top-5 relative "
       overflowHidden={false}
       hideNavigation={true}
-      items={banners.map((banner, index) => {
+      items={banners.map((banner) => {
         return (
-          <div key={banner.name} className=" absolute w-full h-full">
+          <div key={banner.name} className="absolute w-full h-full">
             <Image
               src={banner.src}
               alt={banner.alt}
               layout="responsive"
-              width={1920}
-              height={753}
-              priority={index === 0}
+              width={1242}
+              height={827}
             />
           </div>
         );

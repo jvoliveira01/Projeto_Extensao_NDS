@@ -10,6 +10,7 @@ interface Props {
     sm: number;
     md: number;
     lg: number;
+    xl: number;
   };
   classNameContainer?: string;
   overflowHidden?: boolean;
@@ -19,7 +20,7 @@ interface Props {
 
 const Carousel = ({
   items,
-  columns = { xs: 1, sm: 1, md: 1, lg: 1 },
+  columns = { xs: 1, sm: 1, md: 1, lg: 1, xl: 1 },
   classNameContainer = "",
   overflowHidden = true,
   autoplay = true,
@@ -34,17 +35,22 @@ const Carousel = ({
     selectedColumns = columns.xs;
   }
 
-  if (width >= 500 && width < 600) {
+  if (width >= 500 && width < 620) {
     selectedColumns = columns.sm;
   }
 
-  if (width >= 620 && width < 970) {
+  if (width >= 620 && width < 820) {
     selectedColumns = columns.md;
   }
 
-  if (width >= 970) {
+  if (width >= 820 && width < 970) {
     selectedColumns = columns.lg;
   }
+
+  if (width >= 970) {
+    selectedColumns = columns.xl;
+  }
+
   const [withAutoplay, setWithAutoplay] = useState(autoplay);
 
   const changeActiveItem = useCallback(
@@ -102,7 +108,7 @@ const Carousel = ({
         </div>
       )}
       <div
-        className={`whitespace-nowrap transition-transform ml-2 ${classNameContainer}`}
+        className={`whitespace-nowrap transition-transform ${classNameContainer}`}
         style={{
           transform: `translateX(${activeItem * -(100 / selectedColumns)}%)`,
         }}

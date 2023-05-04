@@ -5,7 +5,7 @@ interface Props {
 
 const Container = ({ children, className }: Props) => {
   return (
-    <div className={`flex mx-auto w-full max-w-6xl ${className || ''}`}>
+    <div className={`flex mx-auto w-full max-w-7xl ${className || ""}`}>
       {children}
     </div>
   );

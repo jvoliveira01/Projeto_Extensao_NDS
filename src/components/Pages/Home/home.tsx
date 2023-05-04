@@ -1,16 +1,22 @@
-import Main, { CarrousselImagesProps } from "@components/components/Pages/Home/Main";
+import Main from "@components/components/Pages/Home/Main";
 import WhatsAppButton from "@components/components/WhatsAppButton";
 import Container from "@components/shared/Container";
 import HomePageBanner from "./Banner";
+interface CarrousselImagesProps {
+  images: {
+    src: string;
+    alt: string;
+  }[];
+}
 
-const Home = ({images}: CarrousselImagesProps) => {
+const Home = ({ images }: CarrousselImagesProps) => {
   return (
     <div className="overflow-hidden">
       <HomePageBanner />
       <Container>
         <div className="w-full flex">
           <div className="flex flex-col w-full z-30">
-            <Main images={images}/>
+            <Main images={images} />
           </div>
         </div>
         <WhatsAppButton />

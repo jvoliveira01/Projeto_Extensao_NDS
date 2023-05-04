@@ -19,7 +19,7 @@ const CarouselNavigation = ({
       type="button"
       className={`${
         direction === "left" ? "left-0" : "right-0 "
-      } top-0 flex absolute z-10 justify-center px-2 items-center h-12 bottom-5 my-auto`}
+      } top-0 flex absolute z-10 justify-center px-2 items-center h-12 bottom-3 my-auto`}
       onClick={() => {
         return changeActiveItem(
           direction === "left" ? activeItem - 1 : activeItem + 1
