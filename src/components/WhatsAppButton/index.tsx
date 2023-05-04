@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 
 const WhatsAppButton = () => {
   const [openWhatsAppText, setOpenWhatsAppText] = useState(false);
+  const [isDeviceTouchScreen, setIsDeviceTouchScreen] = useState(false);
 
   const handleOpenWhatsAppText = () => {
     setOpenWhatsAppText(true);
@@ -13,11 +14,18 @@ const WhatsAppButton = () => {
     setOpenWhatsAppText(false);
   };
 
-  const [isTouchDevice, setIsTouchDevice] = useState(false);
+  const deviceTouchScreen = () => {
+    if (
+      "ontouchstart" in window ||
+      navigator.maxTouchPoints > 0 ||
+      navigator.maxTouchPoints > 0
+    ) {
+      setIsDeviceTouchScreen(true);
+    }
+  };
 
   useEffect(() => {
-    const mediaQuery = window.matchMedia("(hover: none)");
-    setIsTouchDevice(mediaQuery.matches);
+    deviceTouchScreen();
   }, []);
 
   return (
@@ -29,7 +37,7 @@ const WhatsAppButton = () => {
         target="_blank"
         className="flex items-center gap-x-2"
       >
-        {openWhatsAppText && !isTouchDevice ? (
+        {openWhatsAppText && !isDeviceTouchScreen ? (
           <Typography
             text="Entrar em contato"
             className="bg-[#000000] text-white rounded-lg p-2"

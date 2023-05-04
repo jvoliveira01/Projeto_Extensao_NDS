@@ -46,7 +46,7 @@ const Main = ({ images }: CarrousselImagesProps) => {
       <div className="flex flex-col text-white">
         <Typography text="Inovação" className={classesTypography} />
         <Typography text="Tecnologia" className={classesTypography} />
-        <Typography text="Satisfação" className={classesTypography} />
+        <Typography text="Excelência" className={classesTypography} />
 
         <div className="flex flex-col  mt-[10%] bg-black rounded-t-lg p-3">
           <Typography

@@ -30,6 +30,9 @@ const LightBox = ({ image, handleCloseLightBox }: Props) => {
           width={460}
           alt={image.alt}
           className="rounded-lg"
+          onClick={(ev) => {
+            ev.stopPropagation();
+          }}
         />
       </div>
     </div>
