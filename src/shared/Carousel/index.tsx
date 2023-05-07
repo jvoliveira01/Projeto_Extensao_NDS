@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useState } from "react";
 import CarouselItem from "./Item";
-import useWindowDimensions from "@components/hooks/useWindowDimensions";
 import CarouselNavigation from "./Navigation";
+import useWindowDimensions from "../../hooks/useWindowDimensions";
 
 interface Props {
   items: React.ReactNode[];

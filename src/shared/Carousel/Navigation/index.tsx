@@ -1,5 +1,5 @@
 import React from "react";
-import Image from "@components/shared/Image";
+import Image from "../../Image";
 
 interface Props {
   changeActiveItem: (goToSlide: number) => void;

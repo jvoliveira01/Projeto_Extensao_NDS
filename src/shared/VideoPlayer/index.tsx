@@ -1,5 +1,5 @@
-import Image from "@components/shared/Image";
 import React, { useState, useRef, useEffect, ChangeEvent } from "react";
+import Image from "../Image";
 
 interface Props {
   src: string;

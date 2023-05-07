@@ -1,6 +1,6 @@
-import Image from "@components/shared/Image";
-import Typography from "@components/shared/Typography";
 import { useEffect, useState } from "react";
+import Typography from "../../shared/Typography";
+import Image from "../../shared/Image";
 
 const WhatsAppButton = () => {
   const [openWhatsAppText, setOpenWhatsAppText] = useState(false);
@@ -33,7 +33,7 @@ const WhatsAppButton = () => {
       className={`flex fixed z-50 bottom-[3%] mx-auto w-full max-w-7xl px-5 justify-end`}
     >
       <a
-        href="https://api.whatsapp.com/send?phone=5537998372091"
+        href="https://api.whatsapp.com/send?phone=5537999881788"
         target="_blank"
         className="flex items-center gap-x-2"
       >

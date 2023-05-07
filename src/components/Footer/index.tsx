@@ -1,5 +1,5 @@
-import Typography from "@components/shared/Typography";
 import useWindowDimensions from "../../hooks/useWindowDimensions";
+import Typography from "../../shared/Typography";
 
 const Footer = () => {
   const { width } = useWindowDimensions();

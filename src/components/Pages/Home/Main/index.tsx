@@ -1,20 +1,20 @@
-import LightBox from "@components/components/LightBox";
-import useWindowDimensions from "@components/hooks/useWindowDimensions";
-import Carousel from "@components/shared/Carousel";
-import Image from "@components/shared/Image";
-import Typography from "@components/shared/Typography";
-import VideoPlayer from "@components/shared/VideoPlayer";
 import { useState } from "react";
+import useWindowDimensions from "../../../../hooks/useWindowDimensions";
+import Typography from "../../../../shared/Typography";
+import Image from "../../../../shared/Image";
+import Carousel from "../../../../shared/Carousel";
+import VideoPlayer from "../../../../shared/VideoPlayer";
+import LightBox from "../../../LightBox";
 
 type Image = {
   src: string;
   alt: string;
 };
-interface CarrousselImagesProps {
-  images: Image[];
+interface Props {
+  imagesCarousel: Image[];
 }
 
-const Main = ({ images }: CarrousselImagesProps) => {
+const Main = ({ imagesCarousel }: Props) => {
   const { width } = useWindowDimensions();
 
   let classesTypography = "";
@@ -29,7 +29,7 @@ const Main = ({ images }: CarrousselImagesProps) => {
     classesTypography = " flex justify-end pr-10 !text-6xl mt-[8%] gap-2 ";
   }
 
-  const [selectedImage, setSelectedImage] = useState<Image>(images[0]);
+  const [selectedImage, setSelectedImage] = useState<Image>(imagesCarousel[0]);
   const [openLightBox, setOpenLightBox] = useState(false);
   const handleSelectImage = (image: Image) => {
     setSelectedImage(image);
@@ -122,7 +122,7 @@ const Main = ({ images }: CarrousselImagesProps) => {
           <Carousel
             columns={{ xs: 1, sm: 1, md: 2, lg: 3, xl: 3 }}
             overflowHidden
-            items={images.map((image, index) => {
+            items={imagesCarousel.map((image, index) => {
               return (
                 <div key={image.alt}>
                   <Image

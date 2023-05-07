@@ -1,8 +1,7 @@
-import useWindowDimensions from "@components/hooks/useWindowDimensions";
-import sendFormEmail from "@components/services/mail";
-import Container from "@components/shared/Container";
-import Image from "@components/shared/Image";
-import Typography from "@components/shared/Typography";
+import useWindowDimensions from "../../../hooks/useWindowDimensions";
+import Container from "../../../shared/Container";
+import Image from "../../../shared/Image";
+import Typography from "../../../shared/Typography";
 
 const AboutUs = () => {
   const { width } = useWindowDimensions();

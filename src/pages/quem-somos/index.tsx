@@ -1,7 +1,7 @@
 import Head from "next/head";
 import { NextPage } from "next";
-import SiteFrontLayout from "@components/layouts/SiteFront";
-import AboutUs from "@components/components/Pages/AboutUs";
+import SiteFrontLayout from "../../layouts/SiteFront";
+import AboutUs from "../../components/Pages/AboutUs";
 
 const Page: NextPage = () => {
   return (

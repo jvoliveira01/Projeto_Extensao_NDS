@@ -1,4 +1,4 @@
-import Image from "@components/shared/Image";
+import Image from "../../shared/Image";
 
 interface Props {
   image: {

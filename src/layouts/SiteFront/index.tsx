@@ -1,5 +1,5 @@
-import AppBar from "@components/components/AppBar";
-import Footer from "@components/components/Footer";
+import AppBar from "../../components/AppBar";
+import Footer from "../../components/Footer";
 
 interface Props {
   children: React.ReactNode;

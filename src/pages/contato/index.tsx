@@ -1,7 +1,7 @@
 import Head from "next/head";
 import { NextPage } from "next";
-import SiteFrontLayout from "@components/layouts/SiteFront";
-import Contact from "@components/components/Pages/Contact";
+import SiteFrontLayout from "../../layouts/SiteFront";
+import Contact from "../../components/Pages/Contact";
 
 const Page: NextPage = () => {
   return (
@@ -16,7 +16,7 @@ const Page: NextPage = () => {
         <meta name="application-name" content="Nave do Som" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div className="bg-[#1f1f1f]">
+      <div className="bg-[#1f1f1f] h-[100%]">
         <Contact />
       </div>
     </SiteFrontLayout>

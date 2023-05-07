@@ -1,8 +1,8 @@
-import useWindowDimensions from "@components/hooks/useWindowDimensions";
-import Button from "@components/shared/Button";
-import Image from "@components/shared/Image";
-import Link from "@components/shared/Link";
 import { useRouter } from "next/router";
+import useWindowDimensions from "../../hooks/useWindowDimensions";
+import Image from "../../shared/Image";
+import Link from "../../shared/Link";
+import Button from "../../shared/Button";
 
 const AppBar = () => {
   const { width } = useWindowDimensions();

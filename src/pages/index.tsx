@@ -1,17 +1,24 @@
 import { GetServerSideProps } from "next";
 import Head from "next/head";
 import { NextPage } from "next";
-import SiteFrontLayout from "@components/layouts/SiteFront";
-import Home from "@components/components/Pages/Home/home";
+import SiteFrontLayout from "../layouts/SiteFront";
+import Home from "../components/Pages/Home/home";
 
 interface CarrousselImagesProps {
-  images: {
+  imagesBanners: {
+    src: string;
+    alt: string;
+  }[];
+  imagesCarousel: {
     src: string;
     alt: string;
   }[];
 }
 
-const Page: NextPage<CarrousselImagesProps> = ({ images }) => {
+const Page: NextPage<CarrousselImagesProps> = ({
+  imagesBanners,
+  imagesCarousel,
+}) => {
   return (
     <SiteFrontLayout>
       <Head>
@@ -25,7 +32,7 @@ const Page: NextPage<CarrousselImagesProps> = ({ images }) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className="bg-[#1f1f1f]">
-        <Home images={images} />
+        <Home imagesBanners={imagesBanners} imagesCarousel={imagesCarousel} />
       </div>
     </SiteFrontLayout>
   );
@@ -34,40 +41,76 @@ const Page: NextPage<CarrousselImagesProps> = ({ images }) => {
 export const getServerSideProps: GetServerSideProps<
   CarrousselImagesProps
 > = async () => {
-  const images = [
+  const imagesBanners = [
     {
-      src: "/images/1.jpg",
+      src: "/images/1.png",
       alt: "1",
     },
     {
-      src: "/images/2.jpg",
+      src: "/images/2.png",
       alt: "2",
     },
     {
-      src: "/images/3.jpg",
+      src: "/images/3.png",
+      alt: "3",
+    },
+  ];
+
+  const imagesCarousel = [
+    {
+      src: "/images/image1.png",
+      alt: "1",
+    },
+    {
+      src: "/images/image2.png",
+      alt: "2",
+    },
+    {
+      src: "/images/image3.png",
       alt: "3",
     },
     {
-      src: "/images/4.jpg",
+      src: "/images/image4.png",
       alt: "4",
     },
     {
-      src: "/images/5.jpg",
+      src: "/images/image5.png",
       alt: "5",
     },
     {
-      src: "/images/6.jpg",
+      src: "/images/image6.png",
       alt: "6",
     },
     {
-      src: "/images/7.jpg",
+      src: "/images/image7.png",
       alt: "7",
+    },
+    {
+      src: "/images/image8.png",
+      alt: "8",
+    },
+    {
+      src: "/images/image9.png",
+      alt: "9",
+    },
+    {
+      src: "/images/image10.png",
+      alt: "10",
+    },
+    {
+      src: "/images/image11.png",
+      alt: "11",
+    },
+    {
+      src: "/images/image12.png",
+      alt: "12",
     },
   ];
 
   return {
     props: {
-      images,
+      imagesBanners,
+      imagesCarousel,
     },
   };
 };
