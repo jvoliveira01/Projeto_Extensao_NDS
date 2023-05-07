@@ -24,6 +24,7 @@ const HomePageBanner = ({ imagesBanners }: Props) => {
               layout="responsive"
               width={1242}
               height={827}
+              className="opacity-[0.55]"
             />
           </div>
         );
