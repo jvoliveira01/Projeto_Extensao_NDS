@@ -3,7 +3,8 @@ import useWindowDimensions from "../../../hooks/useWindowDimensions";
 import Container from "../../../shared/Container";
 import Image from "../../../shared/Image";
 import Typography from "../../../shared/Typography";
-import { MailService } from "../../../utils/Email";
+import { sendContactEmail } from "../../../utils/Email";
+import { toast } from "react-toastify";
 
 interface Form {
   name: string;
@@ -19,12 +20,28 @@ const Contact = () => {
     email: "",
     matter: "",
   });
+  const [loading, setLoading] = useState(false);
 
   const handleSendEmail = async () => {
+    setLoading(true);
+
     if (!formFields.name || !formFields.phone || !formFields.email) {
       window.alert("Preencha todos os campos!");
     } else {
-      await MailService.sendEmail(formFields);
+      try {
+        await sendContactEmail(formFields);
+        setFormFields({
+          name: "",
+          phone: "",
+          email: "",
+          matter: "",
+        })
+        setLoading(false);
+        toast.success("Email enviado com sucesso!")
+      } catch (error) {
+        setLoading(false);
+        toast.error("Erro ao enviar email!");
+      }
     }
   };
   return (
@@ -71,7 +88,6 @@ const Contact = () => {
         <div className="w-full bg-white rounded min-h-[250px] p-3">
           <form
             className="flex flex-col h-full justify-between"
-            action="mailto:joaovitooroliv2015@gmail.com"
             method="POST"
             encType="text/plain"
           >
@@ -134,7 +150,7 @@ const Contact = () => {
           </form>
         </div>
         <div className="flex w-full items-center justify-center">
-          <input
+        <input
             type="submit"
             placeholder="Enviar"
             className="cursor-pointer text-white bg-[#ffc30e] w-24 h-9 rounded"
