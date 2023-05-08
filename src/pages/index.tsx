@@ -105,6 +105,22 @@ export const getServerSideProps: GetServerSideProps<
       src: "/images/image12.png",
       alt: "12",
     },
+    {
+      src: "/images/image13.png",
+      alt: "13",
+    },
+    {
+      src: "/images/image14.png",
+      alt: "14",
+    },
+    {
+      src: "/images/image15.png",
+      alt: "15",
+    },
+    {
+      src: "/images/image16.png",
+      alt: "16",
+    },
   ];
 
   return {
