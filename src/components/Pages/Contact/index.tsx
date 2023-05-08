@@ -23,21 +23,20 @@ const Contact = () => {
   const [loading, setLoading] = useState(false);
 
   const handleSendEmail = async () => {
-    setLoading(true);
-
     if (!formFields.name || !formFields.phone || !formFields.email) {
-      window.alert("Preencha todos os campos!");
+      toast.error("Preencha todos os campos.");
     } else {
       try {
+        setLoading(true);
         await sendContactEmail(formFields);
         setFormFields({
           name: "",
           phone: "",
           email: "",
           matter: "",
-        })
+        });
         setLoading(false);
-        toast.success("Email enviado com sucesso!")
+        toast.success("Email enviado com sucesso!");
       } catch (error) {
         setLoading(false);
         toast.error("Erro ao enviar email!");
@@ -150,7 +149,7 @@ const Contact = () => {
           </form>
         </div>
         <div className="flex w-full items-center justify-center">
-        <input
+          <input
             type="submit"
             placeholder="Enviar"
             className="cursor-pointer text-white bg-[#ffc30e] w-24 h-9 rounded"
@@ -158,6 +157,19 @@ const Contact = () => {
           />
         </div>
       </div>
+      {loading && (
+        <div className="absolute flex w-full max-w-7xl h-full items-center justify-center bg-[#000000b9] ">
+          <div className="w-[50px] h-[50px]">
+            <Image
+              src="/loading.png"
+              width={50}
+              height={50}
+              alt="Carregando"
+              className="animate-spin"
+            />
+          </div>
+        </div>
+      )}
     </Container>
   );
 };
