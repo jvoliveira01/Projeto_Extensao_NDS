@@ -49,7 +49,7 @@ const Main = ({ imagesCarousel }: Props) => {
         <Typography text="Tecnologia" className={classesTypography} />
         <Typography text="Excelência" className={classesTypography} />
 
-        <div className="flex flex-col  mt-[10%] bg-black rounded-t-lg p-3">
+        <div className="flex flex-col mt-[10%] bg-black rounded-t-lg p-3">
           <Typography
             text="Temos diversos equipamentos para seu evento ser inesquecível"
             className="pr-2 text-center pt-2 pb-10"
@@ -155,10 +155,7 @@ const Main = ({ imagesCarousel }: Props) => {
             className="text-center"
             type="h1"
           />
-          <VideoPlayer
-            src="/videos/reveillon.mp4"
-            poster="/videos/thumbnail.gif"
-          />
+          <VideoPlayer src="/videos/video.mp4" poster="/videos/thumbnail.gif" />
         </div>
         <div className="flex w-full bg-black justify-center p-5">
           <div className="flex flex-col w-full max-w-4xl gap-y-5 justify-center items-center">
