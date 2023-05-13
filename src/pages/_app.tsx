@@ -13,7 +13,7 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
   return (
     <>
       <div className={font.className}>
-        <Component {...pageProps} />
+        <Component {...pageProps}/>
       </div>
       <ToastContainer autoClose={3000} />
     </>

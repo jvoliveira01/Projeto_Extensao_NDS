@@ -74,8 +74,6 @@ const VideoPlayer = ({ src, poster }: Props) => {
     }
   }, [playerState.playing, playerState.volume]);
 
-  console.log(playerState.percentage);
-
   return (
     <div className="flex flex-col w-[90%]">
       <video

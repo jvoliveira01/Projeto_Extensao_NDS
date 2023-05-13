@@ -16,7 +16,7 @@ const LightBox = ({ image, handleCloseLightBox }: Props) => {
     >
       <div className="w-[40px] h-[40px] cursor-pointer">
         <Image
-          src="/close.png"
+          src="/close.svg"
           alt="Fechar"
           width={25}
           height={25}
