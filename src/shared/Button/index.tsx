@@ -1,4 +1,5 @@
 import type { MouseEvent } from "react";
+import Typography from "../Typography";
 
 interface Props {
   label: string;
@@ -28,7 +29,7 @@ const Button = ({
       onClick={onClick}
       className={`p-2 rounded uppercase font-semibold w-23 ${className} ${specificClassName} relative`}
     >
-      {label}
+      <Typography text={label} />
     </button>
   );
 };

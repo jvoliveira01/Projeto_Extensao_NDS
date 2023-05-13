@@ -40,7 +40,7 @@ const WhatsAppButton = () => {
         {openWhatsAppText && !isDeviceTouchScreen ? (
           <Typography
             text="Entrar em contato"
-            className="bg-[#000000] text-white rounded-lg p-2"
+            className="uppercase bg-[#000000] text-white rounded-lg p-1.5"
           />
         ) : null}
         <Image

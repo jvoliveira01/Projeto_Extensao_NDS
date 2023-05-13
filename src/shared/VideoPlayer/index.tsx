@@ -3,11 +3,7 @@ import Image from "../Image";
 
 interface Props {
   src: string;
-  type: string;
   poster?: string;
-  width?: string | number;
-  height?: string | number;
-  controls?: boolean;
 }
 
 interface PlayerState {

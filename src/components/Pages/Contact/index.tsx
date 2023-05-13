@@ -81,10 +81,10 @@ const Contact = () => {
           <Typography text="(37)3322-1787" className="text-white" />
         </a>
         <Typography
-          text="Preencha o formulário de e-mail e entraremos em contato com você o mais breve possível"
+          text="Preencha o formulário de e-mail e entraremos em contato com você."
           className="text-white"
         />
-        <div className="w-full bg-white rounded min-h-[250px] p-3">
+        <div className="w-full bg-white rounded min-h-[330px] p-3">
           <form
             className="flex flex-col h-full justify-between"
             method="POST"
@@ -132,11 +132,11 @@ const Contact = () => {
                 });
               }}
             />
-            <input
-              type="text"
+            <textarea
               value={formFields.matter}
               placeholder="Assunto"
-              className="bg-[#e8e8e8] p-3 rounded"
+              className="bg-[#e8e8e8] p-3 rounded resize-none"
+              rows={5}
               onChange={(ev) => {
                 return setFormFields((oldFields) => {
                   return {
@@ -149,27 +149,40 @@ const Contact = () => {
           </form>
         </div>
         <div className="flex w-full items-center justify-center">
-          <input
-            type="submit"
-            placeholder="Enviar"
-            className="cursor-pointer text-white bg-[#ffc30e] w-24 h-9 rounded"
-            onClick={handleSendEmail}
-          />
-        </div>
-      </div>
-      {loading && (
-        <div className="absolute flex w-full max-w-7xl h-full items-center justify-center bg-[#000000b9] ">
-          <div className="w-[50px] h-[50px]">
-            <Image
-              src="/loading.png"
-              width={50}
-              height={50}
-              alt="Carregando"
-              className="animate-spin"
-            />
+          <div className="flex items-center justify-center bg-[#ffc30e] rounded w-28 h-10">
+            {!loading ? (
+              <input
+                type="submit"
+                placeholder="enviar"
+                className="cursor-pointer text-white text-xl uppercase"
+                onClick={handleSendEmail}
+              />
+            ) : (
+              <div className="w-[30px] h-[30px]">
+                <Image
+                  src="/carregando.png"
+                  width={50}
+                  height={50}
+                  alt="Carregando"
+                  className="animate-spin"
+                />
+              </div>
+            )}
           </div>
         </div>
-      )}
+        <Typography text="Onde estamos" type="h1" className="text-white" />
+        <div className="flex w-full justify-center">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3738.0313480759737!2d-45.44274528255615!3d-20.463905599999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94b4edfd4b474e21%3A0xa6a64d028910a15b!2sR.%20Jos%C3%A9%20Alves%20Barbosa%2C%2056%20-%20Formiga%2C%20MG%2C%2035570-000!5e0!3m2!1spt-BR!2sbr!4v1683949285260!5m2!1spt-BR!2sbr"
+            width="650"
+            height="400"
+            allowFullScreen={false}
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+            className="rounded"
+          ></iframe>
+        </div>
+      </div>
     </Container>
   );
 };

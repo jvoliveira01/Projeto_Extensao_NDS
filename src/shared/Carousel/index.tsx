@@ -70,7 +70,7 @@ const Carousel = ({
     if (withAutoplay) {
       const interval = setInterval(() => {
         changeActiveItem(activeItem + 1);
-      }, 9000);
+      }, 7000);
       return () => {
         return clearInterval(interval);
       };
@@ -108,7 +108,7 @@ const Carousel = ({
         </div>
       )}
       <div
-        className={`whitespace-nowrap transition-transform ${classNameContainer}`}
+        className={`whitespace-nowrap transition-transform duration-1000 ${classNameContainer}`}
         style={{
           transform: `translateX(${activeItem * -(100 / selectedColumns)}%)`,
         }}

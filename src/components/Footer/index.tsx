@@ -18,9 +18,8 @@ const Footer = () => {
           }`}
         >
           <Typography
-            type="h3"
             text="Contato"
-            className="text-[#ffc30e] bg-[#000000] py-1 px-2 rounded-lg max-w-min text-center"
+            className="uppercase text-[#ffc30e] bg-[#000000] py-1 px-2 rounded-lg max-w-min text-center"
           />
           <div className="flex flex-col gap-y-2">
             <Typography type="caption" text="(37) 3322-1787" />
@@ -45,17 +44,16 @@ const Footer = () => {
           }`}
         >
           <Typography
-            type="h3"
             text="Nave do Som"
-            className="text-[#ffc30e] bg-[#000000] py-1 px-2 rounded-lg text-center"
+            className="uppercase text-[#ffc30e] bg-[#000000] py-1 px-2 rounded-lg text-center"
           />
           <div className="flex flex-col gap-y-2">
-            <Typography type="caption" text="CNPJ: 09.199.680/0001-99" />
             <Typography
               type="caption"
               text="Rua José Alves Barbosa, 56, Bela Vista"
             />
             <Typography type="caption" text="Formiga/MG - CEP 35574-213" />
+            <Typography type="caption" text="CNPJ: 09.199.680/0001-99" />
           </div>
         </div>
       </div>
@@ -63,7 +61,7 @@ const Footer = () => {
         <div className="flex text-center bg-[#f0f0f0] p-5 justify-center ">
           <Typography
             type="caption"
-            className=" w-full max-w-[80%]"
+            className=" w-full max-w-[80%] font-bold"
             text="Agradecemos sua visita ao nosso site. Esperamos ter a oportunidade de transformar seu evento em um espetáculo único e inesquecível. Entre em contato conosco para mais informações."
           />
         </div>
@@ -71,7 +69,7 @@ const Footer = () => {
       <Typography
         type="caption"
         text={`Copyright © ${new Date().getFullYear()} Nave do Som - Todos os direitos reservados`}
-        className="text-[#c9c9c9] text-center py-2"
+        className="text-[#c9c9c9] text-center py-2 text-[11px]"
       />
     </>
   );
