@@ -15,7 +15,7 @@ const HomePageBanner = ({ imagesBanners }: Props) => {
       classNameContainer="-top-5 relative "
       overflowHidden={false}
       hideNavigation={true}
-      items={imagesBanners.map((banner) => {
+      items={imagesBanners.map((banner, index) => {
         return (
           <div key={banner.src} className="absolute w-full h-full">
             <Image
@@ -25,6 +25,7 @@ const HomePageBanner = ({ imagesBanners }: Props) => {
               width={1242}
               height={827}
               className="opacity-[0.55]"
+              priority={index === 0}
             />
           </div>
         );

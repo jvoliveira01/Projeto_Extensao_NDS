@@ -11,16 +11,19 @@ interface Props {
     src: string;
     alt: string;
   }[];
+  video: {
+    src: string;
+  };
 }
 
-const Home = ({ imagesBanners, imagesCarousel }: Props) => {
+const Home = ({ imagesBanners, imagesCarousel, video }: Props) => {
   return (
     <div className="overflow-hidden">
       <HomePageBanner imagesBanners={imagesBanners} />
       <Container>
         <div className="w-full flex">
           <div className="flex flex-col w-full z-30">
-            <Main imagesCarousel={imagesCarousel} />
+            <Main imagesCarousel={imagesCarousel} video={video} />
           </div>
         </div>
         <WhatsAppButton />

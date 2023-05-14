@@ -1,4 +1,4 @@
-import { GetServerSideProps } from "next";
+import { GetStaticProps } from "next";
 import Head from "next/head";
 import { NextPage } from "next";
 import SiteFrontLayout from "../layouts/SiteFront";
@@ -13,11 +13,15 @@ interface CarrousselImagesProps {
     src: string;
     alt: string;
   }[];
+  video: {
+    src: string;
+  };
 }
 
 const Page: NextPage<CarrousselImagesProps> = ({
   imagesBanners,
   imagesCarousel,
+  video,
 }) => {
   return (
     <SiteFrontLayout>
@@ -29,16 +33,26 @@ const Page: NextPage<CarrousselImagesProps> = ({
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="application-name" content="Nave do Som" />
+        <meta
+          name="keywords"
+          content="eventos, som, iluminação, palcos, festas, fogos, nave do som, artista, música"
+        />
+        <meta name="mobile-web-app-capable" content="yes" />
+        <meta name="theme-color" content="#000000" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className="bg-[#1f1f1f]">
-        <Home imagesBanners={imagesBanners} imagesCarousel={imagesCarousel} />
+        <Home
+          imagesBanners={imagesBanners}
+          imagesCarousel={imagesCarousel}
+          video={video}
+        />
       </div>
     </SiteFrontLayout>
   );
 };
 
-export const getServerSideProps: GetServerSideProps<
+export const getStaticProps: GetStaticProps<
   CarrousselImagesProps
 > = async () => {
   const imagesBanners = [
@@ -123,10 +137,15 @@ export const getServerSideProps: GetServerSideProps<
     },
   ];
 
+  const video = {
+    src: "/videos/video.mp4",
+  };
+
   return {
     props: {
       imagesBanners,
       imagesCarousel,
+      video,
     },
   };
 };

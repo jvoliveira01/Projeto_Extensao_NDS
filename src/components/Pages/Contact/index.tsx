@@ -62,7 +62,7 @@ const Contact = () => {
         >
           <div className="w-12 bg-[#ffc30e] rounded-full">
             <Image
-              src="/whatsappPB.png"
+              src="/whatsappPB.svg"
               alt="WhatsApp"
               width={20}
               height={20}
@@ -76,7 +76,7 @@ const Contact = () => {
           className="flex flex-row items-center gap-5 max-w-[195px]"
         >
           <div className="w-12 bg-[#ffc30e] rounded-full">
-            <Image src="/telefone.png" alt="WhatsApp" width={30} height={30} />
+            <Image src="/phone.svg" alt="Telefone" width={30} height={30} />
           </div>
           <Typography text="(37)3322-1787" className="text-white" />
         </a>
@@ -160,7 +160,7 @@ const Contact = () => {
             ) : (
               <div className="w-[30px] h-[30px]">
                 <Image
-                  src="/carregando.png"
+                  src="/loading.svg"
                   width={50}
                   height={50}
                   alt="Carregando"

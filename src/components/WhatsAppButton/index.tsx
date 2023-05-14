@@ -44,7 +44,7 @@ const WhatsAppButton = () => {
           />
         ) : null}
         <Image
-          src="/whatsapp.png"
+          src="/whatsapp.svg"
           alt="WhatsApp"
           layout="fixed"
           width={45}
