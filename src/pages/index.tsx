@@ -1,6 +1,5 @@
-import { GetStaticProps } from "next";
 import Head from "next/head";
-import { NextPage } from "next";
+import { NextPage, GetStaticProps } from "next";
 import SiteFrontLayout from "../layouts/SiteFront";
 import Home from "../components/Pages/Home/home";
 

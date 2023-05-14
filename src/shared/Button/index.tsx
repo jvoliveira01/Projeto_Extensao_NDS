@@ -3,31 +3,14 @@ import Typography from "../Typography";
 
 interface Props {
   label: string;
-  className?: string;
-  variant?: "standard" | "secondary";
   onClick?: (event: MouseEvent) => void;
 }
 
-const Button = ({
-  label,
-  className = "",
-  variant = "standard",
-  onClick,
-}: Props) => {
-  let specificClassName = "";
-
-  if (variant === "standard") {
-    specificClassName = "bg-[#000000] text-white hover:text-[#ffc30e]";
-  }
-
-  if (variant === "secondary") {
-    specificClassName = `bg-[#000000] text-[#ffc30e]`;
-  }
-
+const Button = ({ label, onClick }: Props) => {
   return (
     <button
       onClick={onClick}
-      className={`p-2 rounded uppercase font-semibold w-23 ${className} ${specificClassName} relative`}
+      className={`p-2 rounded uppercase font-semibold w-23 bg-[#000000] text-white hover:text-[#ffc30e] relative`}
     >
       <Typography text={label} />
     </button>
