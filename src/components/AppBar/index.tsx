@@ -15,7 +15,7 @@ const AppBar = () => {
       <div className="bg-[#000000] p-2">
         <div
           className={`flex mx-auto w-full max-w-7xl px-3 ${
-            width <= 570
+            width <= 595
               ? "flex-col items-center justify-center"
               : "flex-row justify-between"
           }`}

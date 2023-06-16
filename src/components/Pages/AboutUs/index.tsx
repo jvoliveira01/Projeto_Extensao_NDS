@@ -20,7 +20,7 @@ const AboutUs = () => {
         >
           <div className="flex flex-col justify-center items-center w-full h-[100%]">
             <Typography
-              text="Fundada em YYYY, a Nave do Som começou como uma pequena operação fornecendo serviços de iluminação e som para eventos locais. Desde então, cresceu para se tornar um dos principais fornecedores de soluções de eventos da região. "
+              text="Fundada em 1978, a Nave do Som começou como uma pequena operação fornecendo serviços de iluminação e som para eventos locais. Desde então, cresceu para se tornar um dos principais fornecedores de soluções de eventos da região. "
               className={`tracking-wide text-white text-justify pb-5`}
             />
             {width <= 850 && (
