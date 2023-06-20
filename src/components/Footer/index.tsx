@@ -8,7 +8,7 @@ const Footer = () => {
       <div
         className={`flex ${
           width < 575 && "flex-col"
-        } justify-around bg-[#f0f0f0] text-black  ${
+        } justify-around bg-secondary-150 text-secondary-500  ${
           width < 790 && "rounded-b-none"
         }  w-full max-w-7xl mx-auto rounded-b-lg`}
       >
@@ -19,7 +19,7 @@ const Footer = () => {
         >
           <Typography
             text="Contato"
-            className="uppercase text-[#ffc30e] bg-[#000000] py-1 px-2 rounded-lg max-w-min text-center"
+            className="uppercase text-primary-50 bg-secondary-500 py-1 px-2 rounded-lg max-w-min text-center"
           />
           <div className="flex flex-col gap-y-2">
             <Typography type="caption" text="(37) 3322-1787" />
@@ -45,7 +45,7 @@ const Footer = () => {
         >
           <Typography
             text="Nave do Som"
-            className="uppercase text-[#ffc30e] bg-[#000000] py-1 px-2 rounded-lg text-center"
+            className="uppercase text-primary-50 bg-secondary-500 py-1 px-2 rounded-lg text-center"
           />
           <div className="flex flex-col gap-y-2">
             <Typography
@@ -58,7 +58,7 @@ const Footer = () => {
         </div>
       </div>
       {width < 790 && (
-        <div className="flex text-center bg-[#f0f0f0] p-5 justify-center ">
+        <div className="flex text-center bg-secondary-150 p-5 justify-center ">
           <Typography
             type="caption"
             className=" w-full max-w-[80%] font-bold"
@@ -69,7 +69,7 @@ const Footer = () => {
       <Typography
         type="caption"
         text={`Copyright © ${new Date().getFullYear()} Nave do Som - Todos os direitos reservados`}
-        className="text-[#c9c9c9] text-center py-2 text-[11px]"
+        className="text-secondary-180 text-center py-2 text-[11px]"
       />
     </>
   );

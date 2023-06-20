@@ -19,7 +19,7 @@ const LightBox = ({ image, handleCloseLightBox }: Props) => {
 
   return (
     <div
-      className="flex flex-col gap-2 h-auto fixed inset-0 bg-[#000000b9] items-center justify-center z-50"
+      className="flex flex-col gap-2 h-auto fixed inset-0 bg-secondary-200 items-center justify-center z-50"
       onClick={handleCloseLightBox}
     >
       <div
@@ -41,7 +41,7 @@ const LightBox = ({ image, handleCloseLightBox }: Props) => {
           width={25}
           height={25}
           onClick={handleCloseLightBox}
-          className="absolute !w-[38px] !h-[38px] rounded-full bg-[#ffc30e] p-1.5 top-2 right-2 cursor-pointer"
+          className="absolute !w-[38px] !h-[38px] rounded-full bg-primary-50 p-1.5 top-2 right-2 cursor-pointer"
         />
       </div>
     </div>

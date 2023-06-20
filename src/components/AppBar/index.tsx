@@ -12,7 +12,7 @@ const AppBar = () => {
   };
   return (
     <div className="sm:fixed top-0 left-0 z-40 w-full">
-      <div className="bg-[#000000] p-2">
+      <div className="bg-secondary-500 p-2">
         <div
           className={`flex mx-auto w-full max-w-7xl px-3 ${
             width <= 595
@@ -30,7 +30,7 @@ const AppBar = () => {
               className="cursor-pointer relative w-full"
             />
           </Link>
-          <div className="flex items-center justify-between text-white text-[13px] sm:text-sm gap-4">
+          <div className="flex items-center justify-between text-secondary-100 text-[13px] sm:text-sm gap-4">
             {router.pathname !== "/" ? (
               <Button
                 label="Início"

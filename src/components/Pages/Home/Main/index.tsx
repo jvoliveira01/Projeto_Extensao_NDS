@@ -47,12 +47,12 @@ const Main = ({ imagesCarousel, video }: Props) => {
 
   return (
     <>
-      <div className="flex flex-col text-white">
+      <div className="flex flex-col text-secondary-100">
         <Typography text="Inovação" className={classesTypography} />
         <Typography text="Tecnologia" className={classesTypography} />
         <Typography text="Excelência" className={classesTypography} />
 
-        <div className="flex flex-col mt-[10%] bg-black rounded-t-lg p-3">
+        <div className="flex flex-col mt-[10%] bg-secondary-500 rounded-t-lg p-3">
           <Typography
             text="Temos diversos equipamentos para seu evento ser inesquecível"
             className="pr-2 text-center pt-2 pb-10"
@@ -125,7 +125,7 @@ const Main = ({ imagesCarousel, video }: Props) => {
             </div>
           </div>
         </div>
-        <div className="flex flex-col gap-y-8 pt-[1%] bg-black p-3">
+        <div className="flex flex-col gap-y-8 pt-[1%] bg-secondary-500 p-3">
           <Typography
             text="Veja alguns de nossos trabalhos"
             className="text-center pt-2"
@@ -152,7 +152,7 @@ const Main = ({ imagesCarousel, video }: Props) => {
             })}
           />{" "}
         </div>
-        <div className="flex flex-col bg-black p-3 gap-y-5 justify-center items-center">
+        <div className="flex flex-col bg-secondary-500 p-3 gap-y-5 justify-center items-center">
           <Typography
             text="Estamos há anos nesse mercado, e temos muita história para contar..."
             className="text-center"
@@ -160,7 +160,7 @@ const Main = ({ imagesCarousel, video }: Props) => {
           />
           <VideoPlayer src={video.src} poster="/videos/thumbnail.gif" />
         </div>
-        <div className="flex w-full bg-black justify-center p-5">
+        <div className="flex w-full bg-secondary-500 justify-center p-5">
           <div className="flex flex-col w-full max-w-4xl gap-y-5 justify-center items-center">
             <Typography
               text="Temos tudo o que você precisa, desde a iluminação de alta qualidade até a estruturas de palco, treliças e fogos."
@@ -169,7 +169,7 @@ const Main = ({ imagesCarousel, video }: Props) => {
             />
             <Typography
               text="A NAVE DO SOM É SUA MELHOR ESCOLHA"
-              className="text-center text-[#ffc30e]"
+              className="text-center text-primary-50"
               type="h2"
             />
             <Typography

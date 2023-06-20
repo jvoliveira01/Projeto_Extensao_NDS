@@ -84,7 +84,7 @@ const VideoPlayer = ({ src, poster }: Props) => {
         onClick={toggleVideoPlay}
         className="cursor-pointer"
       />
-      <div className="flex items-center justify-between bg-[#707070] py-2 px-3 gap-2">
+      <div className="flex items-center justify-between bg-secondary-250 py-2 px-3 gap-2">
         <button onClick={toggleVideoPlay} className="w-6 h-6">
           <Image
             src={playerState.playing ? "/play.svg" : "/pause.svg"}

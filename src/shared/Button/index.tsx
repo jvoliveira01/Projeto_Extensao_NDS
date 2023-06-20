@@ -10,7 +10,7 @@ const Button = ({ label, onClick }: Props) => {
   return (
     <button
       onClick={onClick}
-      className={`p-2 rounded uppercase font-semibold w-23 bg-[#000000] text-white hover:text-[#ffc30e] relative`}
+      className={`p-2 rounded uppercase font-semibold w-23 bg-secondary-500 text-secondary-100 hover:text-primary-50 relative`}
     >
       <Typography text={label} />
     </button>

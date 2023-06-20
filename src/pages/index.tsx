@@ -28,7 +28,7 @@ const Page: NextPage<CarrousselImagesProps> = ({
         <title>Nave do Som</title>
         <meta
           name="description"
-          content="Os melhores equipamentos e a melhor equipe para realizar suas festas você encontra aqui, na Nave do Som"
+          content="Os melhores equipamentos e a melhor equipe para seu evento você encontra aqui, na Nave do Som"
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="application-name" content="Nave do Som" />
@@ -40,7 +40,7 @@ const Page: NextPage<CarrousselImagesProps> = ({
         <meta name="theme-color" content="#000000" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div className="bg-[#1f1f1f]">
+      <div className="bg-secondary-50">
         <Home
           imagesBanners={imagesBanners}
           imagesCarousel={imagesCarousel}
