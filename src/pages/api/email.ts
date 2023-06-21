@@ -18,13 +18,13 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
     } <br /> Telefone para contato: ${data.phone} <br /> E-mail: ${
       data.email
     } <br /> Assunto: ${
-      data.matter !== "" ? `${data.matter}` : "REMETENTE NÃO INFORMOU ASSUNTO."
+      data.matter !== "" ? data.matter : "REMETENTE NÃO INFORMOU ASSUNTO."
     } `;
 
     try {
       await configNodemailer.sendMail({
         from: data.email,
-        to: `"Nave Do Som" <${process.env.EMAIL_NAVE_DO_SOM}>`,
+        to: `"Nave Do Som" <${process.env.EMAIL_USERNAME}>`,
         subject: "Novo e-mail enviado do site",
         text: textMail,
         html: htmlMail,

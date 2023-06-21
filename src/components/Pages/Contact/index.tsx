@@ -22,25 +22,34 @@ const Contact = () => {
   });
   const [loading, setLoading] = useState(false);
 
+  const emailValidator = (email: string) => {
+    if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(email)) {
+      return 0;
+    }
+    return 1;
+  };
+
   const handleSendEmail = async () => {
     if (!formFields.name || !formFields.phone || !formFields.email) {
-      toast.error("Preencha todos os campos.");
-    } else {
-      try {
-        setLoading(true);
-        await sendContactEmail(formFields);
-        setFormFields({
-          name: "",
-          phone: "",
-          email: "",
-          matter: "",
-        });
-        setLoading(false);
-        toast.success("Email enviado com sucesso!");
-      } catch (error) {
-        setLoading(false);
-        toast.error("Erro ao enviar email!");
-      }
+      return toast.error("Preencha todos os campos.");
+    }
+    if (!emailValidator(formFields.email)) {
+      return toast.error("Informe um e-mail correto/válido.");
+    }
+    try {
+      setLoading(true);
+      await sendContactEmail(formFields);
+      setFormFields({
+        name: "",
+        phone: "",
+        email: "",
+        matter: "",
+      });
+      setLoading(false);
+      toast.success("Email enviado com sucesso!");
+    } catch (error) {
+      setLoading(false);
+      toast.error("Erro ao enviar email!");
     }
   };
   return (
@@ -119,7 +128,7 @@ const Contact = () => {
               }}
             />
             <input
-              type="text"
+              type="number"
               value={formFields.phone}
               placeholder="Telefone"
               className="bg-secondary-160 p-3 rounded"
