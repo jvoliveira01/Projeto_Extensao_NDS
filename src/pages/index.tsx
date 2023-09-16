@@ -12,15 +12,11 @@ interface CarrousselImagesProps {
     src: string;
     alt: string;
   }[];
-  video: {
-    src: string;
-  };
 }
 
 const Page: NextPage<CarrousselImagesProps> = ({
   imagesBanners,
   imagesCarousel,
-  video,
 }) => {
   return (
     <SiteFrontLayout>
@@ -41,11 +37,7 @@ const Page: NextPage<CarrousselImagesProps> = ({
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className="bg-secondary-50">
-        <Home
-          imagesBanners={imagesBanners}
-          imagesCarousel={imagesCarousel}
-          video={video}
-        />
+        <Home imagesBanners={imagesBanners} imagesCarousel={imagesCarousel} />
       </div>
     </SiteFrontLayout>
   );
@@ -136,15 +128,10 @@ export const getStaticProps: GetStaticProps<
     },
   ];
 
-  const video = {
-    src: "/videos/video.mp4",
-  };
-
   return {
     props: {
       imagesBanners,
       imagesCarousel,
-      video,
     },
   };
 };

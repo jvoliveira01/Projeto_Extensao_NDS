@@ -3,7 +3,6 @@ import useWindowDimensions from "../../../../hooks/useWindowDimensions";
 import Typography from "../../../../shared/Typography";
 import Image from "../../../../shared/Image";
 import Carousel from "../../../../shared/Carousel";
-import VideoPlayer from "../../../../shared/VideoPlayer";
 import LightBox from "../../../LightBox";
 
 type Image = {
@@ -12,12 +11,9 @@ type Image = {
 };
 interface Props {
   imagesCarousel: Image[];
-  video: {
-    src: string;
-  };
 }
 
-const Main = ({ imagesCarousel, video }: Props) => {
+const Main = ({ imagesCarousel }: Props) => {
   const { width } = useWindowDimensions();
 
   let classesTypography = "";
@@ -158,7 +154,14 @@ const Main = ({ imagesCarousel, video }: Props) => {
             className="text-center"
             type="h1"
           />
-          <VideoPlayer src={video.src} poster="/videos/thumbnail.gif" />
+          <div className="flex w-[100%] h-[100%] justify-center rounded">
+            <iframe
+              width="100%"
+              height={width > 600 ? "600" : "350"}
+              src="https://www.youtube.com/embed/8ZllCp1kTwo?si=Mq4LTY6mbXEAUhwq"
+              title="Nave Do Som"
+            />
+          </div>
         </div>
         <div className="flex w-full bg-secondary-500 justify-center p-5">
           <div className="flex flex-col w-full max-w-4xl gap-y-5 justify-center items-center">
